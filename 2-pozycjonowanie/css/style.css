@@ -1,0 +1,19 @@
+#szary {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    background-color: #a6a9b6;
+    border: 10px solid #666360;
+}
+#jasny {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    background-color:#e4e4e4 ;
+    left:200px;
+}
+#orange {
+    height: 200px;
+    width: 200px;
+    background-color: #ff912e;
+}1
