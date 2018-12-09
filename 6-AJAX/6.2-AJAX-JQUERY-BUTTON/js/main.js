@@ -1,12 +1,30 @@
-$.ajax({
-         url: "http://echo.jsontest.com/userId/108/userName/Akademia108/ userURL/akademia108.pl",     
-         dataType: 'json',     
-         success: function () { 
- 
-        console.log();
-    },     
-    onerror: function (msg) {
-        console.log(msg);
-    } 
-});
+$(function () {
+    function funkcja() {
+        $("#pobierz-dane").click(function () {
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/users",
+                dataType: 'json',
+                success: function (resultJSON) {
+                    let pierwszyUzytkownik = resultJSON[0];
+                    let paragraf = document.createElement("p");
 
+                    $(paragraf).html(`
+               Id: ${pierwszyUzytkownik.id}, <br>
+               Name: ${pierwszyUzytkownik.name}, <br>
+               Email: ${pierwszyUzytkownik.email}, <br>
+               Website: ${pierwszyUzytkownik.website}, <br>
+               Phone: ${pierwszyUzytkownik.phone}
+           `);
+                    $("body").append(paragraf);
+                },
+                onerror: function (msg) {
+                    console.log(msg);
+                }
+            })
+        });
+
+
+ };
+
+ funkcja();
+});
